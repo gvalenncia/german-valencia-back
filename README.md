@@ -31,3 +31,11 @@ and execute: `$ mvn clean test`
 This is a SpringBoot application that generates a binary distribution (see _Installation_ step 2). So, please 
 execute the following command from /german-valencia-back/cube-api/target/: 
 `java -jar cube-api-0.0.1-SNAPSHOT.jar`
+
+### Cube API Specification
+
+| Resource | Verb | Param | Status Code |
+|---	|---	|---	|---	|
+| /cube/{M}	| POST |M = dimension (int)| 201 CREATED|
+|   	|   	|   	|   	|
+|   	|   	|   	|   	|
