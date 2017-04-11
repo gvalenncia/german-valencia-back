@@ -1,5 +1,6 @@
-package com.german.cube.controller.controller;
+package com.german.cube.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class CubeController {
+
+    @Autowired
+    private CubeService cubeService;
 
     @PostMapping("/cube/{N}")
     public ResponseEntity createCube (@PathVariable("N") String dimension){

@@ -1,6 +1,5 @@
-package com.german.cube.controller;
+package com.german.cube.impl;
 
-import com.german.cube.controller.controller.CubeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +22,4 @@ public class CubeControllerTest {
 	    mockMvc.perform(post("/cube/4"))
                 .andExpect(status().isCreated());
 	}
-
 }
