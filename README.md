@@ -30,12 +30,15 @@ and execute: `$ mvn clean test`
 
 This is a SpringBoot application that generates a binary distribution (see _Installation_ step 2). So, please 
 execute the following command from /german-valencia-back/cube-api/target/: 
-`java -jar cube-api-0.0.1-SNAPSHOT.jar`
+`java -jar cube-api-1.0.0-RELEASE.jar`
+
+The above command publish a REST API in the following URL http://localhost:2222/. So please
+refer to the API specification to send requests.
 
 ### Cube API Specification
 
-| Resource | Verb | Param | Request Body | Response Body| Status Code |
-|---	|---	|---	|---	|---	|---	|
-| /cube/{M}	| POST | M = dimension (int)| n/a | n/a | 201 CREATED|
-| /cube  	| PUT  | n/a | `{"x":2,"y":1,"z":2,"w":15}` | n/a | 200 OK|
-| /cube  	| GET  | n/a | n/a | `{"sum": 10}` | 200 OK |
+| Resource | Verb | Param | Request Body | Response Body| Status Code | Description |
+|---	|---	|---	|---	|---	|---	| ---	|
+| /cube/{M}	| POST | M = dimension (int)| n/a | n/a | 201 CREATED| This creates a cube of dimension MxMxM |
+| /cube  	| PUT  | n/a | `{"x":2,"y":1,"z":2,"w":15}` | n/a | 200 OK| This set the value (w) of a block with the given (x,y,z) location | 
+| /cube  	| GET  | n/a | n/a | `{"sum": 10}` | 200 OK | This gets the sum of the all blocks in a cube |
