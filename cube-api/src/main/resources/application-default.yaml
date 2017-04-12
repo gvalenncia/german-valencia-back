@@ -1,2 +1,8 @@
 server:
   port: 2222
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    ROOT: INFO
