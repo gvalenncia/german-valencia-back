@@ -8,6 +8,32 @@ as stated in HackerRank.
 The solution involves a REST API that implements the logic to create a 3D cube, and 
 also to compute sum between its blocks.
 
+### Solution Design Approach
+
+1. The application is basically a REST API implementation that exposes functionality to interact with a 3D Array.
+2. It has been used maven as a tool to handle the project's life cicle from creating the folder structure, handle the third party 
+libraries, building the binary distribution and running test cases.
+3. SpringBoot is a powerful module that speeds up the development of microservices based on the Spring Framework. Basically,
+SpringBoot provides applications with all the infrastructure in terms of dependencies and app server (among other benefits), to run web-based
+applications from the command line.
+4. Given the benefits of the IoC Container, the application has been divided in 2 layers as follows:
+* **Controller Layer:** The Controller layer aims to provide the classes that implement endpoints under a REST paradigm.
+It means that this layer will implement all the logic to handle requests and responses over the HTTP protocol.
+* **Service Layer:** The Service layer is the one in charge to actually implement the business logic. This layer
+ knows how to create a 3D cube, how to insert values to the blocks, and also how to compute sums across them. There 
+ was no need to create a Persistance Layer (DAO), so a **Singleton Helper Class** is not only used to keep the state of the 3D Array
+ after adding values to blocks, but also to hide the way this array has been implemented to the upstream layers (Service, Controller).
+
+#### Class Responsibilities
+
+CubeApp.java: This is the configuration class that provides all the beans used across application's life cycle.
+CubeController: This class provides the REST API implementation.
+CubeService: This class implements the business logic to interact with a 3D cube.
+HelperCube: This class keeps the state of the 3D array across upstream layers.
+
+Block: This POJO is used to parse a json representation of a request to update a block of the 3D array, from the controller
+Sum: This POJO is used to parse a json representation of the sum.
+
 ### Prerequisites
 
 Make sure to install the following tools:
