@@ -34,4 +34,18 @@ public class CubeServiceTest {
         Assert.assertEquals(15, cubeService.computeCubSum());
     }
 
+    @Test
+    public void shouldSumCube(){
+
+        cubeService.createCube(5);
+
+        Block block = new Block(2,2,1, 15);
+        cubeService.updateCubeBlock(block);
+
+        block = new Block(1,1,1, 15);
+        cubeService.updateCubeBlock(block);
+
+        Assert.assertEquals(30, cubeService.computeCubSum());
+    }
+
 }

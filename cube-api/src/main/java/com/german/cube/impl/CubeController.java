@@ -1,6 +1,7 @@
 package com.german.cube.impl;
 
 import com.german.cube.model.Block;
+import com.german.cube.model.Sum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,13 @@ public class CubeController {
     public ResponseEntity updateCubeBlock(@RequestBody Block block){
         cubeService.updateCubeBlock(block);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/cube")
+    public Sum getSumCube(){
+        Sum sum = new Sum();
+        sum.setSum(cubeService.computeCubSum());
+        return sum;
     }
 
 }

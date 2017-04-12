@@ -34,8 +34,8 @@ execute the following command from /german-valencia-back/cube-api/target/:
 
 ### Cube API Specification
 
-| Resource | Verb | Param | Request Body | Status Code |
-|---	|---	|---	|---	|---	|
-| /cube/{M}	| POST | M = dimension (int)| | 201 CREATED|
-| /cube/  	| PUT  |  | `{"x":2,"y":1,"z":2,"w":15}` | 200 OK|
-|   	|   	|   	|   	| |
+| Resource | Verb | Param | Request Body | Response Body| Status Code |
+|---	|---	|---	|---	|---	|---	|
+| /cube/{M}	| POST | M = dimension (int)| n/a | n/a | 201 CREATED|
+| /cube  	| PUT  | n/a | `{"x":2,"y":1,"z":2,"w":15}` | n/a | 200 OK|
+| /cube  	| GET  | n/a | n/a | `{"sum": 10}` | 200 OK |
