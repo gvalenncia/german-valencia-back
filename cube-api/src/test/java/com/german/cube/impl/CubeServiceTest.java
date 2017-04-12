@@ -1,5 +1,6 @@
 package com.german.cube.impl;
 
+import com.german.cube.model.Block;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,4 +24,14 @@ public class CubeServiceTest {
         cubeService.createCube(5);
         Assert.assertEquals(5, cubeService.getCubeSize());
     }
+
+    @Test
+    public void shouldUpdateCubeBlock2x1x2(){
+        Block block = new Block(2,2,1, 15);
+        cubeService.createCube(5);
+        cubeService.updateCubeBlock(block);
+
+        Assert.assertEquals(15, cubeService.computeCubSum());
+    }
+
 }

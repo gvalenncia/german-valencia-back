@@ -32,6 +32,9 @@ public class CubeControllerTest {
 	    ObjectMapper mapper = new ObjectMapper();
         Block blockRequest = new Block(2,1,2, 15);
 
+        mockMvc.perform(post("/cube/5"))
+                .andExpect(status().isCreated());
+
         mockMvc.perform(put("/cube")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(mapper.writeValueAsString(blockRequest)))

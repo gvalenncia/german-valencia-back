@@ -1,5 +1,6 @@
 package com.german.cube.impl;
 
+import com.german.cube.model.Block;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,18 @@ public class CubeService {
     private HelperCube helperCube;
 
     public void createCube(int dimension){
-        helperCube.setCube(dimension);
+        helperCube.createCube(dimension);
     }
 
     public int getCubeSize() {
         return helperCube.getCubeSize();
+    }
+
+    public void updateCubeBlock(Block block) {
+        helperCube.setBlock(block);
+    }
+
+    public int computeCubSum() {
+        return helperCube.sumCube();
     }
 }

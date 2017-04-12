@@ -17,11 +17,13 @@ public class CubeController {
 
     @PostMapping("/cube/{N}")
     public ResponseEntity createCube (@PathVariable("N") String dimension){
+        cubeService.createCube(Integer.parseInt(dimension));
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping("/cube")
     public ResponseEntity updateCubeBlock(@RequestBody Block block){
+        cubeService.updateCubeBlock(block);
         return new ResponseEntity(HttpStatus.OK);
     }
 
